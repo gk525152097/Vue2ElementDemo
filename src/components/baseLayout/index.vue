@@ -1,5 +1,5 @@
 <template>
-    <div class="index">
+    <div class="main-wrapper">
         <div>
             <mainHeader></mainHeader>
         </div>
@@ -8,7 +8,14 @@
                 <mainMenu></mainMenu>
             </div>
             <div class="layout-content">
-                <div class="content"></div>
+                <div class="content">
+                    <div class="content-top" :style="{ minHeight: `calc(100% - ${minHeight}px)` }">
+                        <router-view></router-view>
+                    </div>
+                    <div class="content-bottom" ref="footer">
+                        <mainFooter></mainFooter>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -17,23 +24,27 @@
 <script>
     import mainHeader from "./mainHeader";
     import mainMenu from "./mainMenu";
+    import mainFooter from "./mainFooter";
     export default {
         name: 'index',
         components: {
             mainHeader,
-            mainMenu
+            mainMenu,
+            mainFooter
         },
         props: {},
         data() {
-            return {}
+            return {
+                minHeight: 0
+            }
         },
-
         computed: {},
         watch: {},
         methods: {},
         created() {
         },
         mounted() {
+            this.minHeight = this.$refs.footer.offsetHeight
         },
         destroyed() {
         }
@@ -41,7 +52,7 @@
 </script>
 
 <style lang="scss" scoped>
-    .index {
+    .main-wrapper {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -51,17 +62,22 @@
             display: flex;
             justify-content: stretch;
             .layout-menu {
+                position: relative;
             }
             .layout-content {
                 flex: 1;
                 position: relative;
+                overflow-y: scroll;
                 .content {
                     position: absolute;
                     top: 0;
                     left: 0;
                     bottom: 0;
                     right: 0;
-                    background: #888888;
+                    .content-top {
+                        padding: 12px;
+                        box-sizing: border-box;
+                    }
                 }
             }
         }

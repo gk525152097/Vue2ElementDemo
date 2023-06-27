@@ -38,3 +38,20 @@ ol, ul {
   -webkit-box-orient: vertical; /* 设置或检索伸缩盒对象的子元素的排列方式 */
 }
 
+.box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.el-form--label-top {
+  .el-form-item__label {
+    padding-bottom: 0 !important;
+    line-height: unset !important;
+  }
+}
+
+.el-form-item {
+  margin-bottom: 12px !important;
+}

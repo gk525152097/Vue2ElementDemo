@@ -13,8 +13,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import "~@/assets/css/global";
+<style lang="scss">
+@import "~@/assets/css/global.scss";
 #app {
   font-size: 14px;
 }

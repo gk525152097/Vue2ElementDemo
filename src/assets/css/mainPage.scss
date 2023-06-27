@@ -1,0 +1,18 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: space-between;
+  .wrapper-left {
+    display: flex;
+    align-items: center;
+    button {
+      margin-right: 12px;
+    }
+  }
+  .wrapper-right {
+    display: flex;
+    align-items: center;
+    button {
+      margin-left: 12px;
+    }
+  }
+}

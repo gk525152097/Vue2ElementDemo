@@ -27,6 +27,32 @@ export const routes = [
                 path: '/roleManage/index',
                 name: '角色管理',
                 icon: 'el-icon-user-solid',
+                component: () => import('@/views/roleManage/index')
+            }
+        ]
+    },
+    {
+        path: '/menuManage',
+        name: '菜单管理',
+        component: () => import('@/components/baseLayout/index'),
+        children: [
+            {
+                path: '/menuManage/index',
+                name: '菜单管理',
+                icon: 'el-icon-user-solid',
+                component: () => import('@/views/home/index')
+            }
+        ]
+    },
+    {
+        path: '/userManage',
+        name: '用户管理',
+        component: () => import('@/components/baseLayout/index'),
+        children: [
+            {
+                path: '/userManage/index',
+                name: '用户管理',
+                icon: 'el-icon-user-solid',
                 component: () => import('@/views/home/index')
             }
         ]

@@ -1,5 +1,5 @@
 <template>
-    <div class="mainMenu">
+    <div class="mainMenu" :style="{ width: reduce ? '50px' : '200px' }">
         <vs-sidebar
             background="primary"
             textWhite
@@ -8,6 +8,7 @@
             open
             :reduce="reduce"
             :hover-expand="reduce"
+            square
         >
             <template #logo>
                 <div class="footer-btn-wrapper">
@@ -63,7 +64,6 @@ export default {
     }
 }
     .mainMenu {
-        width: 200px;
     }
     .footer-btn-wrapper {
         .reduce-btn {

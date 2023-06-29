@@ -11,7 +11,7 @@
                 <transition name="breadcrumb">
                     <div class="content">
                         <div class="content-top" :style="{ minHeight: `calc(100% - ${minHeight}px)` }">
-                            <transition name="fade">
+                            <transition name="breadcrumb">
                                 <router-view></router-view>
                             </transition>
                         </div>

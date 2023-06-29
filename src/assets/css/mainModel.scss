@@ -1,0 +1,10 @@
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

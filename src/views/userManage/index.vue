@@ -4,7 +4,7 @@
             <el-form label-position="top" label-width="80px" :model="searchForm">
                 <el-row :gutter="12">
                     <el-col :span="6">
-                        <el-form-item label="角色名称">
+                        <el-form-item label="用户名称">
                             <el-input size="small" v-model="searchForm.name"></el-input>
                         </el-form-item>
                     </el-col>
@@ -27,15 +27,20 @@
         </div>
         <div class="box">
             <el-table :data="tableData" style="width: 100%">
-                <el-table-column fixed prop="index" align="center" label="序号" width="60">
+                <el-table-column prop="index" align="center" label="序号" width="60">
                     <template #default="{ $index }">
                         {{ (page.current - 1) * page.size + $index + 1 }}
                     </template>
                 </el-table-column>
-                <el-table-column fixed prop="date" label="角色名称"></el-table-column>
-                <el-table-column fixed prop="date" label="状态"></el-table-column>
-                <el-table-column fixed prop="date" label="更新时间"></el-table-column>
-                <el-table-column fixed="right" align="center" label="操作">
+                <el-table-column prop="date" :width="160" label="账号"></el-table-column>
+                <el-table-column prop="date" :width="160" label="用户名称"></el-table-column>
+                <el-table-column prop="date" :width="160" label="身份证号"></el-table-column>
+                <el-table-column prop="date" :width="160" label="绑定手机号码"></el-table-column>
+                <el-table-column prop="date" :width="160" label="所属角色"></el-table-column>
+                <el-table-column prop="date" :width="160" label="状态"></el-table-column>
+                <el-table-column prop="date" :width="160" label="备注"></el-table-column>
+                <el-table-column prop="date" :width="160" label="更新时间"></el-table-column>
+                <el-table-column fixed="right" :width="160" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="btn-wrapper">
                             <vs-button size="small" @click="handleEdit(scope.row)">编辑</vs-button>

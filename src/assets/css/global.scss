@@ -53,5 +53,32 @@ ol, ul {
 }
 
 .el-form-item {
-  margin-bottom: 12px !important;
+  margin-bottom: 18px !important;
+}
+
+.vs-dialog-content {
+  z-index: 10000 !important;
+}
+
+.vs-sidebar__group {
+  &.open {
+    >.vs-sidebar__group__content {
+      height: unset !important;
+    }
+  }
+}
+
+.vs-dialog--fullScreen {
+  .vs-dialog__content {
+    max-height: calc(100% - 52.5px - 40px) !important;
+    min-height: calc(100% - 52.5px - 40px) !important;
+  }
+}
+
+.el-select-dropdown {
+  z-index: 10001 !important;
+}
+
+.el-date-picker {
+  z-index: 10001 !important;
 }

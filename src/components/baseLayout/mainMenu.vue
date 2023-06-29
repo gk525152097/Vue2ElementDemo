@@ -1,14 +1,12 @@
 <template>
     <div class="mainMenu" :style="{ width: reduce ? '50px' : '200px' }">
         <vs-sidebar
-            background="primary"
-            textWhite
+            background="#FFFFFF"
             absolute
             v-model="active"
             open
             :reduce="reduce"
             :hover-expand="reduce"
-            square
         >
             <template #logo>
                 <div class="footer-btn-wrapper">
@@ -70,7 +68,7 @@ export default {
             width: 36px;
             height: 36px;
             border-radius: 12px;
-            background: #fff;
+            border: 1px solid #ccc;
             display: flex;
             align-items: center;
             justify-content: center;

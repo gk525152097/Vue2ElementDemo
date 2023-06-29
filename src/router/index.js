@@ -40,7 +40,7 @@ export const routes = [
                 path: '/menuManage/index',
                 name: '菜单管理',
                 icon: 'el-icon-user-solid',
-                component: () => import('@/views/home/index')
+                component: () => import('@/views/menuManage/index')
             }
         ]
     },
@@ -53,20 +53,32 @@ export const routes = [
                 path: '/userManage/index',
                 name: '用户管理',
                 icon: 'el-icon-user-solid',
-                component: () => import('@/views/home/index')
+                component: () => import('@/views/userManage/index')
             }
         ]
     },
     {
         path: '/dataManage',
-        name: '数据中心',
+        name: '数据管理',
         component: () => import('@/components/baseLayout/index'),
         icon: 'el-icon-s-help',
         children: [
             {
-                path: '/dataManage/index1',
-                name: '测试1',
-                component: () => import('@/views/home/index')
+                path: '/dataManage/zaiwaibaiserencai',
+                name: '在外百色人才',
+                component: () => import('@/components/baseLayout/blankLayout'),
+                children: [
+                    {
+                        path: '/dataManage/zaiwaibaiserencaidaoru',
+                        name: '人才信息导入',
+                        component: () => import('@/views/zaiwaibaiserencaidaoru/index'),
+                    },
+                    {
+                        path: '/dataManage/zaiwaibaiserencaichaxun',
+                        name: '人才信息查询',
+                        component: () => import('@/views/zaiwaibaiserencaichaxun/index'),
+                    }
+                ]
             },
             {
                 path: '/dataManage/index2',

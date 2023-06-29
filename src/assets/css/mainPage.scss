@@ -1,6 +1,15 @@
 .btn-wrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  &.between {
+    justify-content: space-between;
+  }
+  button {
+    margin-right: 12px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
   .wrapper-left {
     display: flex;
     align-items: center;
@@ -14,5 +23,17 @@
     button {
       margin-left: 12px;
     }
+  }
+}
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.search-form {
+  .el-form-item {
+    margin-bottom: 2px !important;
   }
 }

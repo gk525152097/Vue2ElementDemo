@@ -54,7 +54,7 @@
                 <el-table-column prop="date" :width="160" label="导入时间"></el-table-column>
                 <el-table-column prop="date" :width="160" label="审核人"></el-table-column>
                 <el-table-column prop="date" :width="160" label="审核时间"></el-table-column>
-                <el-table-column fixed="right" :width="240" align="center" label="操作">
+                <el-table-column fixed="right" :width="220" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="btn-wrapper">
                             <vs-button size="small" @click="handleJudge(scope.row)">审核</vs-button>

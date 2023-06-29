@@ -81,12 +81,56 @@ export const routes = [
                 ]
             },
             {
-                path: '/dataManage/index2',
-                name: '测试2',
-                component: () => import('@/views/home/index')
+                path: '/dataManage/gaozhongbiyesheng',
+                name: '百色高中毕业生',
+                component: () => import('@/components/baseLayout/blankLayout'),
+                children: [
+                    {
+                        path: '/dataManage/gaozhongbiyeshengdaoru',
+                        name: '信息导入',
+                        component: () => import('@/views/gaozhongbiyeshengdaoru/index'),
+                    },
+                    {
+                        path: '/dataManage/gaozhongbiyeshengchaxun',
+                        name: '信息查询',
+                        component: () => import('@/views/gaozhongbiyeshengchaxun/index'),
+                    }
+                ]
+            },
+        ]
+    },
+    {
+        path: '/informationManage',
+        name: '资讯管理',
+        component: () => import('@/components/baseLayout/index'),
+        children: [
+            {
+                path: '/informationManage/informationList',
+                name: '咨询信息',
+                icon: 'el-icon-user-solid',
+                component: () => import('@/views/informationList/index')
+            },
+            {
+                path: '/informationManage/informationSend',
+                name: '信息推送',
+                icon: 'el-icon-user-solid',
+                component: () => import('@/views/informationSend/index')
             }
         ]
-    }
+    },
+    {
+        path: '/dataManage',
+        name: '数据统计',
+        component: () => import('@/components/baseLayout/index'),
+        children: [
+            {
+                path: '/dataManage/index',
+                name: '数据统计',
+                icon: 'el-icon-user-solid',
+                component: () => import('@/views/dataManage/index')
+            }
+        ]
+    },
 ];
 
 const router = new VueRouter({

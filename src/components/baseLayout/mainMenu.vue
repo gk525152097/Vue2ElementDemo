@@ -44,7 +44,16 @@ export default {
     },
 
     computed: {},
-    watch: {},
+    watch: {
+        $route: {
+            immediate: true,
+            handler() {
+                if (this.active !== this.$route.path) {
+                    this.active = this.$route.path
+                }
+            }
+        }
+    },
     methods: {
         handleRoute(record) {
             this.active = record.path

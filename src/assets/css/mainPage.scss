@@ -1,4 +1,5 @@
 .btn-wrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
   &.between {
@@ -36,4 +37,9 @@
   .el-form-item {
     margin-bottom: 2px !important;
   }
+}
+.show-more {
+  margin-right: 12px;
+  color: rgba(var(--vs-primary), 1);
+  cursor: pointer;
 }

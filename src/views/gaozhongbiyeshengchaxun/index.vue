@@ -4,44 +4,29 @@
             <el-form class="search-form" label-position="top" label-width="80px" :model="searchForm">
                 <el-row :gutter="12">
                     <el-col :span="6">
-                        <el-form-item label="采集单位">
+                        <el-form-item label="毕业高中">
                             <el-input size="small" v-model="searchForm.name"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="人才工作领域">
+                        <el-form-item label="班级">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="单位所属行业">
+                        <el-form-item label="高中毕业时间">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="职务级别">
+                        <el-form-item label="姓名">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                 </el-row>
                 <showMore :searchMore="searchMore">
                     <el-col :span="6">
-                        <el-form-item label="姓名">
-                            <el-input size="small" v-model="searchForm.name"></el-input>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="6">
                         <el-form-item label="性别">
-                            <el-input size="small" v-model="searchForm.region"></el-input>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-form-item label="国籍">
-                            <el-input size="small" v-model="searchForm.region"></el-input>
-                        </el-form-item>
-                    </el-col>
-                    <el-col :span="6">
-                        <el-form-item label="籍贯">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
@@ -51,47 +36,57 @@
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="政治面貌">
+                        <el-form-item label="就读高校">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="手机号码">
+                        <el-form-item label="就读城市">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="目前状态">
+                        <el-form-item label="所学专业">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="最高学历">
+                        <el-form-item label="拟获学历">
                             <el-input size="small" v-model="searchForm.name"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="毕业院校">
+                        <el-form-item label="拟获学位">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="最高学位">
+                        <el-form-item label="预计毕业时间">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="专业分类">
+                        <el-form-item label="考研">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="技术支撑">
+                        <el-form-item label="考公、事业单位">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
                     <el-col :span="6">
-                        <el-form-item label="现单位性质">
+                        <el-form-item label="自主择业">
+                            <el-input size="small" v-model="searchForm.region"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-form-item label="自主创业">
+                            <el-input size="small" v-model="searchForm.region"></el-input>
+                        </el-form-item>
+                    </el-col>
+                    <el-col :span="6">
+                        <el-form-item label="回百意向">
                             <el-input size="small" v-model="searchForm.region"></el-input>
                         </el-form-item>
                     </el-col>
@@ -150,7 +145,7 @@
 </template>
 
 <script>
-    import formModel from "../zaiwaibaiserencaidaoru/formModel";
+    import formModel from "../gaozhongbiyeshengdaoru/formModel";
     import confirmBox from '@/components/confirmBox'
     import tooltipBox from '@/components/tooltipBox'
     import columnsSelect from '@/components/columnsSelect'
@@ -376,34 +371,35 @@
                     zip: 200333
                 },],
                 columns: [
-                    { name: '填表日期', key: 'date', check: true },
-                    { name: '采集单位', key: 'date', check: true },
-                    { name: '人才工作领域', key: 'date', check: true },
+                    { name: '毕业高中', key: 'date', check: true },
+                    { name: '班级', key: 'date', check: true },
+                    { name: '高中毕业时间', key: 'date', check: true },
                     { name: '姓名', key: 'date', check: true },
                     { name: '性别', key: 'date', check: true },
-                    { name: '国籍', key: 'date', check: true },
-                    { name: '籍贯', key: 'date', check: true },
-                    { name: '籍贯地址', key: 'date', check: true },
                     { name: '出生日期', key: 'date', check: true },
-                    { name: '政治面貌', key: 'date', check: true },
-                    { name: '手机号码', key: 'date', check: true },
-                    { name: 'QQ/微信', key: 'date' },
+                    { name: '籍贯', key: 'date', check: true },
+                    { name: '就读城市', key: 'date' },
+                    { name: '就读高校', key: 'date' },
+                    { name: '所学专业', key: 'date' },
+                    { name: '拟获学位', key: 'date' },
+                    { name: '拟获学历', key: 'date' },
+                    { name: '预计毕业时间', key: 'date' },
+                    { name: '手机号码', key: 'date' },
                     { name: '电子邮箱', key: 'date' },
-                    { name: '现居住地', key: 'date' },
-                    { name: '目前状态', key: 'date' },
-                    { name: '最高学历', key: 'date' },
-                    { name: '最高学历毕业院校', key: 'date' },
-                    { name: '最高学位', key: 'date' },
-                    { name: '专业分类', key: 'date' },
-                    { name: '职务级别', key: 'date' },
-                    { name: '技术职称', key: 'date' },
-                    { name: '教育经历', key: 'date' },
-                    { name: '现工作单位', key: 'date' },
-                    { name: '现工作单位所属行业', key: 'date' },
-                    { name: '现工作单位性质', key: 'date' },
-                    { name: '在广西简要对学习、工作经历', key: 'date' },
-                    { name: '工作业绩', key: 'date' },
-                    { name: '个人有关情况简介', key: 'date' },
+                    { name: '考研', key: 'date' },
+                    { name: '考公、事业单位', key: 'date' },
+                    { name: '自主择业', key: 'date' },
+                    { name: '自主创业', key: 'date' },
+                    { name: '是否有回百色意向', key: 'date' },
+                    { name: '家庭成员姓名1', key: 'date' },
+                    { name: '称谓1', key: 'date' },
+                    { name: '工作单位或住址1', key: 'date' },
+                    { name: '联系电话1', key: 'date' },
+                    { name: '家庭成员姓名2', key: 'date' },
+                    { name: '称谓2', key: 'date' },
+                    { name: '工作单位或住址2', key: 'date' },
+                    { name: '联系电话2', key: 'date' },
+                    { name: '备注', key: 'date' },
                     { name: '更新人员', key: 'date' },
                     { name: '更新时间', key: 'date' },
                 ]

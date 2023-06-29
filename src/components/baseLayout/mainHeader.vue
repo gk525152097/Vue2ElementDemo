@@ -54,7 +54,7 @@
         justify-content: space-between;
         height: 60px;
         padding: 0 24px;
-        background: rgba(25, 91, 255, 1);
+        background: rgba(var(--vs-primary), 1);
     }
     .avatar-icon {
         font-size: 20px;

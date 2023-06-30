@@ -4,6 +4,7 @@
  */
 
 import router from './router'
+import handleRSA from '@/utils/rsa'
 
 const whiteList = [
     '/',
@@ -28,8 +29,14 @@ router.beforeEach((to, from, next) => {
     // if (to.meta.title) {
     //   document.title = to.meta.title || '百色市人才招聘服务平台';
     // }
+    if (to.query.employee_id) {
+        sessionStorage.setItem('Authorization', handleRSA(to.query.employee_id))
+        next(to.path)
+        return false
+    }
 
     const Authorization =  sessionStorage.getItem('Authorization')
+
 
     if (whiteList.includes(to.path)) {
         next()
@@ -39,22 +46,7 @@ router.beforeEach((to, from, next) => {
         return false
     }
 
-    if (to.matched && to.matched.length && ['/userSystem'].includes(to.matched[0].path) && Authorization) {
-        if (userList.includes(to.path) && !store.state.main.enterStatue) {
-            sessionStorage.setItem('redirectPath', to.path)
-            router.push({ path: '/commitmentInfo' })
-        } else {
-            next()
-        }
-    } else if (to.matched && to.matched.length && ['/managerSystem'].includes(to.matched[0].path)) {
-        if (Authorization) {
-            next()
-        } else {
-            next({ path: '/managerLogin', replace: true })
-        }
-    } else {
-        next()
-    }
+    next()
 })
 
 router.afterEach(() => {

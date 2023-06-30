@@ -52,8 +52,12 @@
                 immediate:true,
                 handler() {
                     this.checkedItems = this.columns.filter(item => item.check).map(item => item.name)
-                    if (this.checkedItems.length) {
-                        this.isIndeterminate = true
+                    if (this.checkedItems.length === this.columns.length) {
+                        this.checkAll = true
+                    } else {
+                        if (this.checkedItems.length) {
+                            this.isIndeterminate = true
+                        }
                     }
                 }
             }

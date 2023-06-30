@@ -1,23 +1,66 @@
 <template>
     <vs-dialog scroll overflow-hidden width="800px" not-center v-model="visible">
         <template #header>
-            {{ Object.keys(checkItem).length ? '编辑' : '新增' }}角色
+            {{ Object.keys(checkItem).length ? '编辑' : '新增' }}绿领人才
         </template>
-        <el-form :model="form" :rules="rules" ref="ruleForm" label-width="80px">
-            <el-form-item label="角色名称" prop="name">
-                <el-input v-model="form.name"></el-input>
-            </el-form-item>
-            <el-form-item label="菜单权限">
-                <el-tree
-                    :data="data"
-                    show-checkbox
-                    node-key="id"
-                    default-expand-all
-                    :props="defaultProps"
-                    :default-checked-keys="form.defaultCheckedKeys"
-                    @check="handleCheck"
-                ></el-tree>
-            </el-form-item>
+        <el-form :model="form" :rules="rules" ref="ruleForm" label-width="120px">
+            <el-row :gutter="24">
+                <el-col :span="12">
+                    <el-form-item label="姓名" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="性别" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="出生日期" prop="name">
+                        <el-date-picker style="width: 100%" v-model="form.value1" type="date" placeholder="选择日期"></el-date-picker>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="籍贯" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="24">
+                    <el-form-item label="籍贯地址" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="人才类型" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="从事行业" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="特殊技能" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="联系电话" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="12">
+                    <el-form-item label="QQ/微信" prop="name">
+                        <el-input v-model="form.name"></el-input>
+                    </el-form-item>
+                </el-col>
+                <el-col :span="24">
+                    <el-form-item label="备注" prop="name">
+                        <el-input type="textarea" :max="1000" v-model="form.name" placeholder=""></el-input>
+                    </el-form-item>
+                </el-col>
+            </el-row>
         </el-form>
 
         <template #footer>

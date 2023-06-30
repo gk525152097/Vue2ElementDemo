@@ -1,22 +1,34 @@
 <template>
     <vs-dialog scroll overflow-hidden width="800px" not-center v-model="visible">
         <template #header>
-            {{ Object.keys(checkItem).length ? '编辑' : '新增' }}角色
+            {{ Object.keys(checkItem).length ? '编辑' : '新增' }}用户
         </template>
         <el-form :model="form" :rules="rules" ref="ruleForm" label-width="80px">
-            <el-form-item label="角色名称" prop="name">
+            <el-form-item label="用户名称" prop="name">
                 <el-input v-model="form.name"></el-input>
             </el-form-item>
-            <el-form-item label="菜单权限">
-                <el-tree
-                    :data="data"
-                    show-checkbox
-                    node-key="id"
-                    default-expand-all
-                    :props="defaultProps"
-                    :default-checked-keys="form.defaultCheckedKeys"
-                    @check="handleCheck"
-                ></el-tree>
+            <el-form-item label="手机号码" prop="name">
+                <el-input v-model="form.name"></el-input>
+            </el-form-item>
+            <el-form-item label="登录账号" prop="name">
+                <el-input v-model="form.name"></el-input>
+            </el-form-item>
+            <el-form-item label="身份证号" prop="name">
+                <el-input v-model="form.name"></el-input>
+            </el-form-item>
+            <el-form-item label="所属角色" prop="name">
+                <el-select v-model="form.role" style="width: 100%">
+                    <el-option label="管理员">管理员</el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="用户状态" prop="status">
+                <el-radio-group v-model="form.status" size="small">
+                    <el-radio :label="1">有效</el-radio>
+                    <el-radio :label="0">无效</el-radio>
+                </el-radio-group>
+            </el-form-item>
+            <el-form-item label="备注" prop="name">
+                <el-input type="textarea" v-model="form.name"></el-input>
             </el-form-item>
         </el-form>
 

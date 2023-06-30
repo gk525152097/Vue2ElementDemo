@@ -11,6 +11,7 @@ import 'vuesax/dist/vuesax.css' //Vuesax styles
 import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/css/reset.scss'
 import 'moment/locale/zh-cn'
+import './permission'
 
 Vue.prototype.$echarts = echarts
 

@@ -60,22 +60,41 @@ export const routes = [
     {
         path: '/dataManage',
         name: '数据管理',
-        component: () => import('@/components/baseLayout/index'),
         icon: 'el-icon-s-help',
+        component: () => import('@/components/baseLayout/index'),
         children: [
+            {
+                path: '/dataManage/waidizhubaiserencai',
+                name: '外地驻百色人才',
+                icon: 'el-icon-menu',
+                component: () => import('@/components/baseLayout/blankLayout'),
+                children: [
+                    {
+                        path: '/dataManage/waidizhubaiserencaidaoru',
+                        name: '信息导入',
+                        component: () => import('@/views/waidizhubaiserencaidaoru/index'),
+                    },
+                    {
+                        path: '/dataManage/waidizhubaiserencaichaxun',
+                        name: '信息查询',
+                        component: () => import('@/views/waidizhubaiserencaichaxun/index'),
+                    }
+                ]
+            },
             {
                 path: '/dataManage/zaiwaibaiserencai',
                 name: '在外百色人才',
+                icon: 'el-icon-menu',
                 component: () => import('@/components/baseLayout/blankLayout'),
                 children: [
                     {
                         path: '/dataManage/zaiwaibaiserencaidaoru',
-                        name: '人才信息导入',
+                        name: '信息导入',
                         component: () => import('@/views/zaiwaibaiserencaidaoru/index'),
                     },
                     {
                         path: '/dataManage/zaiwaibaiserencaichaxun',
-                        name: '人才信息查询',
+                        name: '信息查询',
                         component: () => import('@/views/zaiwaibaiserencaichaxun/index'),
                     }
                 ]
@@ -83,6 +102,7 @@ export const routes = [
             {
                 path: '/dataManage/gaozhongbiyesheng',
                 name: '百色高中毕业生',
+                icon: 'el-icon-menu',
                 component: () => import('@/components/baseLayout/blankLayout'),
                 children: [
                     {
@@ -97,23 +117,40 @@ export const routes = [
                     }
                 ]
             },
+            {
+                path: '/dataManage/lvlingrencai',
+                name: '绿领人才',
+                icon: 'el-icon-menu',
+                component: () => import('@/components/baseLayout/blankLayout'),
+                children: [
+                    {
+                        path: '/dataManage/lvlingrencaidaoru',
+                        name: '信息导入',
+                        component: () => import('@/views/lvlingrencaidaoru/index'),
+                    },
+                    {
+                        path: '/dataManage/lvlingrencaicahxun',
+                        name: '信息查询',
+                        component: () => import('@/views/lvlingrencaicahxun/index'),
+                    }
+                ]
+            },
         ]
     },
     {
         path: '/informationManage',
         name: '资讯管理',
+        icon: 'el-icon-message',
         component: () => import('@/components/baseLayout/index'),
         children: [
             {
                 path: '/informationManage/informationList',
                 name: '咨询信息',
-                icon: 'el-icon-user-solid',
                 component: () => import('@/views/informationList/index')
             },
             {
                 path: '/informationManage/informationSend',
                 name: '信息推送',
-                icon: 'el-icon-user-solid',
                 component: () => import('@/views/informationSend/index')
             }
         ]
@@ -126,7 +163,7 @@ export const routes = [
             {
                 path: '/dataManage/index',
                 name: '数据统计',
-                icon: 'el-icon-user-solid',
+                icon: 'el-icon-s-marketing',
                 component: () => import('@/views/dataManage/index')
             }
         ]

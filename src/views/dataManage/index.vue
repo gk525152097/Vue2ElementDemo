@@ -19,6 +19,10 @@
         <div class="map-wrapper">
             <div class="map" ref="map"></div>
         </div>
+        <div class="main-title">近五年百色籍高中毕业生就读高校统计图</div>
+        <div class="bar-wrapper">
+            <div class="bar" ref="bar"></div>
+        </div>
         <div class="main-title">年度趋势图</div>
         <div class="line-wrapper">
             <div class="line" ref="line"></div>
@@ -253,6 +257,98 @@
                         }
                     ]
                 })
+            },
+            handleBar() {
+                let bar = this.$echarts.init(this.$refs.bar)
+                bar.setOption({
+                    color: ['rgb(243, 148, 35)', 'rgb(84, 203, 128)', 'rgb(121, 194, 242)', 'rgb(238, 32, 142)', 'rgb(15, 59, 155)'],
+                    title: {
+                        left: 'center',
+                        text: `百色籍高中毕业生就读XXX省/自治区高校情况统计图`,
+                        textStyle: {
+                            color: 'red'
+                        }
+                    },
+                    tooltip: {
+                        trigger: 'axis',
+                        axisPointer: {
+                            type: 'shadow'
+                        }
+                    },
+                    legend: {
+                        bottom: 0
+                    },
+                    grid: {
+                        left: '3%',
+                        right: '4%',
+                        bottom: '3%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        axisLabel: {
+                            interval:0,
+                            rotate:40
+                        },
+                        data: ['清华大学', '北京大学', '中国人民大学', '北京邮电大学', '北京航天航空大学', '北京科技大学', '北京理工大学', '北京工业大学', '北京师范大学', '北京中医药大学', '北京农业大学', '北京电影学院', '北京传媒大学', '中央音乐学院']
+                    },
+                    yAxis: {
+                        type: 'value',
+                        boundaryGap: [0, 0.01]
+                    },
+                    series: [
+                        {
+                            name: '2019',
+                            type: 'bar',
+                            barWidth: 6,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                            data: [18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230]
+                        },
+                        {
+                            name: '2020',
+                            type: 'bar',
+                            barWidth: 6,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                            data: [19325, 23438, 31000, 121594, 134141, 681807, 19325, 23438, 31000, 121594, 134141, 681807, 19325, 23438, 31000, 121594, 134141, 681807]
+                        },
+                        {
+                            name: '2021',
+                            type: 'bar',
+                            barWidth: 6,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                            data: [18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230]
+                        },
+                        {
+                            name: '2022',
+                            type: 'bar',
+                            barWidth: 6,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                            data: [19325, 23438, 31000, 121594, 134141, 681807, 19325, 23438, 31000, 121594, 134141, 681807, 19325, 23438, 31000, 121594, 134141, 681807]
+                        },
+                        {
+                            name: '2023',
+                            type: 'bar',
+                            barWidth: 6,
+                            label: {
+                                show: true,
+                                position: 'top'
+                            },
+                            data: [18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230, 18203, 23489, 29034, 104970, 131744, 630230]
+                        }
+                    ]
+                })
             }
         },
         created() {
@@ -260,6 +356,7 @@
         mounted() {
             this.handleMap()
             this.handleLine()
+            this.handleBar()
         },
         destroyed() {
         }
@@ -327,6 +424,13 @@
         .map {
             margin: 0 auto;
             width: 920px;
+            height: 100%;
+        }
+    }
+    .bar-wrapper {
+        height: 400px;
+        .bar {
+            width: 100%;
             height: 100%;
         }
     }

@@ -38,6 +38,7 @@
                 <el-table-column fixed="right" align="center" label="操作">
                     <template slot-scope="scope">
                         <div class="btn-wrapper">
+                            <vs-button size="small" @click="handleForbiddenConfirm">停用</vs-button>
                             <vs-button size="small" @click="handleEdit(scope.row)">编辑</vs-button>
                             <vs-button flat size="small" @click="handleDeleteConfirm(scope.row)">删除</vs-button>
                         </div>
@@ -57,6 +58,7 @@
 
         <formModel ref="formModel" :checkItem="checkItem"></formModel>
         <confirmBox ref="confirmBox" :content="`确认删除?`" @handleOk="handleDelete"></confirmBox>
+        <confirmBox ref="confirmBox2" :content="`确认停用?`" @handleOk="handleForbidden"></confirmBox>
     </div>
 </template>
 
@@ -122,6 +124,13 @@
             handleEdit(record) {
                 this.checkItem = record
                 this.handleAdd()
+            },
+            handleForbiddenConfirm(record) {
+                this.checkItem = record
+                this.$refs.confirmBox2.visible = true
+            },
+            handleForbidden() {
+
             },
             handleDeleteConfirm(record) {
                 this.checkItem = record
